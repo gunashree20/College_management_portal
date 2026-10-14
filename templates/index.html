@@ -1,0 +1,55 @@
+
+{% extends "base.html" %}
+
+{% block title %}TECHNOVA | Event Portal{% endblock %}
+
+{% block content %}
+<section class="portal-hero">
+    <div>
+        <p class="eyebrow">COLLEGE TECH FEST · 2026</p>
+        <h1>Ideas become<br><span>reality.</span></h1>
+        <p class="hero-description">
+            Discover events, register to participate and build something
+            amazing at TECHNOVA.
+        </p>
+        <div class="hero-buttons">
+            <a class="button button-primary" href="{{ url_for('register') }}">
+                Register for an Event →
+            </a>
+            <a class="button button-secondary" href="{{ url_for('admin') }}">
+                View Dashboard
+            </a>
+        </div>
+    </div>
+
+    <div class="portal-summary">
+        <div class="stat-card">
+            <strong>{{ total }}</strong>
+            <span>Total registrations</span>
+        </div>
+        <div class="stat-card">
+            <strong>{{ event_count }}</strong>
+            <span>Events with registrations</span>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <p class="eyebrow">FIND YOUR CHALLENGE</p>
+    <h2>Explore the <span>events.</span></h2>
+
+    <div class="event-grid">
+        {% for event in events %}
+        <article class="event-card">
+            <p class="event-number">TECHNOVA EVENT</p>
+            <h3>{{ event }}</h3>
+            <p>Join fellow students, share ideas and put your skills to work.</p>
+            <a class="text-link"
+               href="{{ url_for('register', event=event) }}">
+                Register for this event →
+            </a>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

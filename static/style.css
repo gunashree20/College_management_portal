@@ -1,0 +1,270 @@
+
+/* TECHNOVA Flask portal additions */
+
+.portal-main {
+    min-height: 70vh;
+}
+
+.portal-main .navbar {
+    position: relative;
+}
+
+.flash-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 8%;
+}
+
+.flash {
+    padding: 14px 18px;
+    margin-top: 18px;
+    border-radius: 8px;
+    background: #17233b;
+    border: 1px solid var(--border);
+}
+
+.flash.success {
+    border-color: #2b9d75;
+    color: #9ff0cd;
+}
+
+.flash.error {
+    border-color: #d65d76;
+    color: #ffb9c6;
+}
+
+.portal-hero {
+    padding: 85px 8%;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 40px;
+    background:
+        radial-gradient(ellipse at 80% 20%, rgba(155, 123, 255, .16), transparent 55%),
+        var(--background);
+}
+
+.portal-hero h1,
+.form-section h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2.7rem, 5vw, 4.5rem);
+    letter-spacing: -2px;
+    line-height: 1.12;
+    margin-bottom: 22px;
+}
+
+.portal-hero h1 span,
+.form-section h1 span {
+    color: var(--cyan);
+}
+
+.portal-summary {
+    display: grid;
+    gap: 18px;
+}
+
+.portal-summary .stat-card {
+    padding: 32px;
+}
+
+.text-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--cyan);
+    font-weight: 700;
+}
+
+.text-link:hover {
+    color: var(--purple);
+}
+
+.form-section {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 70px 8%;
+}
+
+.form-section .section-description {
+    margin-bottom: 28px;
+}
+
+.portal-form {
+    display: grid;
+    gap: 12px;
+    padding: 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.portal-form label {
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+.portal-form input,
+.portal-form select,
+.search-form input,
+.search-form select,
+.inline-form select {
+    width: 100%;
+    min-width: 0;
+    padding: 12px 13px;
+    color: var(--text);
+    background: #0b1020;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    font: inherit;
+}
+
+.portal-form input:focus,
+.portal-form select:focus,
+.search-form input:focus,
+.search-form select:focus {
+    outline: 2px solid var(--purple);
+    outline-offset: 1px;
+}
+
+.portal-form button {
+    border: 0;
+    cursor: pointer;
+    font: inherit;
+    margin-top: 16px;
+}
+
+.dashboard-section {
+    padding-top: 35px;
+}
+
+.event-summary-list {
+    margin-top: 22px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.event-summary-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 17px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.event-summary-row:last-child {
+    border-bottom: 0;
+}
+
+.event-summary-row strong {
+    color: var(--cyan);
+}
+
+.search-form {
+    display: grid;
+    grid-template-columns: minmax(180px, 1fr) 180px auto auto;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+.search-form .button {
+    border: 1px solid var(--border);
+    text-align: center;
+    white-space: nowrap;
+}
+
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.registration-table {
+    width: 100%;
+    min-width: 1050px;
+    border-collapse: collapse;
+    text-align: left;
+    background: var(--surface);
+}
+
+.registration-table th,
+.registration-table td {
+    padding: 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+}
+
+.registration-table th {
+    background: var(--surface-light);
+    color: var(--cyan);
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+.registration-table td {
+    color: var(--muted);
+    font-size: 0.86rem;
+}
+
+.registration-table tbody tr:hover {
+    background: rgba(155, 123, 255, 0.05);
+}
+
+.status-pill {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 20px;
+    background: rgba(85, 229, 240, 0.1);
+    color: var(--cyan);
+    white-space: nowrap;
+}
+
+.inline-form {
+    display: flex;
+    gap: 6px;
+    min-width: 175px;
+}
+
+.inline-form select {
+    width: 120px;
+    font-size: 0.8rem;
+    padding: 7px;
+}
+
+.small-button {
+    padding: 7px 9px;
+    color: var(--text);
+    background: #292342;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.small-button:hover {
+    border-color: var(--purple);
+}
+
+.small-button.danger {
+    background: #3a1b2a;
+    color: #ffb9c6;
+}
+
+@media (max-width: 800px) {
+    .portal-hero {
+        grid-template-columns: 1fr;
+        padding: 55px 6%;
+    }
+
+    .search-form {
+        grid-template-columns: 1fr;
+    }
+
+    .flash-container {
+        padding: 0 6%;
+    }
+
+    .event-summary-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
